@@ -1,0 +1,10 @@
+Sub_metering_1 <- as.vector(household_sub[["Sub_metering_1"]])
+Sub_metering_2 <- as.vector(household_sub[["Sub_metering_2"]])
+Sub_metering_3 <- as.vector(household_sub[["Sub_metering_3"]])
+
+plot(New_Time, Sub_metering_1, type = "l", xlab = "Time", ylab = "Energy sub metering")
+lines(New_Time, Sub_metering_2, type = "l", col= "red")
+lines(New_Time, Sub_metering_3, type = "l", col = "blue")
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lwd=2, col = c("black", "red", "blue"), cex=0.7)
+dev.copy(png, "Energy_sub_metering.png")
+dev.off()
